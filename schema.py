@@ -10,3 +10,5 @@ class ValidateUser(BaseModel):
     email: str
     description: str
 
+    class Config:
+        orm_mode = True

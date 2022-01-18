@@ -11,16 +11,20 @@ from .schema import ValidateUser
 def home():
 
     data = {
-        "username": 'randy',
+        "username": "joolie",
         "email": 'randy@example.com',
         "description": "I am testing things"
     }
-    user_data = ValidateUser(**data)
-    print(user_data)
 
-    user = User(**user_data.dict())
+    user = User(**data)
     print(user)
 
-    user.update()
+    user_data = ValidateUser.from_orm(user)
+    print(user_data)
+
+
+
+
+    # user.update()
     return "Hello World"
 
